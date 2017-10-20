@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NotificationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="NotificationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Huyens" EntityType="NotificationModel.Huyen" />
+    <EntitySet Name="Tinhs" EntityType="NotificationModel.Tinh" />
+    <EntitySet Name="Xas" EntityType="NotificationModel.Xa" />
+    <EntitySet Name="ChienDichTruyenThongs" EntityType="NotificationModel.ChienDichTruyenThong" />
+  </EntityContainer>
+  <EntityType Name="Huyen">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HUYEN_ID" Type="Double" />
+    <Property Name="TENHUYEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TINH_ID" Type="Double" />
+  </EntityType>
+  <EntityType Name="Tinh">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TINH_ID" Type="Int32" Nullable="false" />
+    <Property Name="TENTINH" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="VUNGMIEN_ID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Xa">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="XA_ID" Type="Double" />
+    <Property Name="TENXA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="HUYEN_ID" Type="Double" />
+  </EntityType>
+  <EntityType Name="ChienDichTruyenThong">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TEN_CHIEN_DICH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="HINH_THUC_TRUYEN_THONG" Type="Int32" />
+    <Property Name="KHU_VUC_ID" Type="Int32" />
+    <Property Name="PHAM_VI" Type="Int32" />
+    <Property Name="NGAY_THUC_HIEN" Type="DateTime" Precision="3" />
+    <Property Name="SO_LUONG" Type="Int32" />
+    <Property Name="NOI_DUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DOI_TUONG" Type="Int32" />
+    <Property Name="TRANG_THAI" Type="Int32" />
+    <Property Name="SO_LUONG_THANH_CONG" Type="Int32" />
+    <Property Name="TINH_ID" Type="Int32" />
+    <Property Name="HUYEN_ID" Type="Int32" />
+    <Property Name="XA_ID" Type="Int32" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NotificationModelStoreContainer" CdmEntityContainer="NotificationEntities">
+    <EntitySetMapping Name="Huyens">
+      <EntityTypeMapping TypeName="NotificationModel.Huyen">
+        <MappingFragment StoreEntitySet="Huyen">
+          <ScalarProperty Name="TINH_ID" ColumnName="TINH_ID" />
+          <ScalarProperty Name="TENHUYEN" ColumnName="TENHUYEN" />
+          <ScalarProperty Name="HUYEN_ID" ColumnName="HUYEN_ID" />
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tinhs">
+      <EntityTypeMapping TypeName="NotificationModel.Tinh">
+        <MappingFragment StoreEntitySet="Tinh">
+          <ScalarProperty Name="VUNGMIEN_ID" ColumnName="VUNGMIEN_ID" />
+          <ScalarProperty Name="TENTINH" ColumnName="TENTINH" />
+          <ScalarProperty Name="TINH_ID" ColumnName="TINH_ID" />
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Xas">
+      <EntityTypeMapping TypeName="NotificationModel.Xa">
+        <MappingFragment StoreEntitySet="Xa">
+          <ScalarProperty Name="HUYEN_ID" ColumnName="HUYEN_ID" />
+          <ScalarProperty Name="TENXA" ColumnName="TENXA" />
+          <ScalarProperty Name="XA_ID" ColumnName="XA_ID" />
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChienDichTruyenThongs">
+      <EntityTypeMapping TypeName="NotificationModel.ChienDichTruyenThong">
+        <MappingFragment StoreEntitySet="ChienDichTruyenThong">
+          <ScalarProperty Name="XA_ID" ColumnName="XA_ID" />
+          <ScalarProperty Name="HUYEN_ID" ColumnName="HUYEN_ID" />
+          <ScalarProperty Name="TINH_ID" ColumnName="TINH_ID" />
+          <ScalarProperty Name="SO_LUONG_THANH_CONG" ColumnName="SO_LUONG_THANH_CONG" />
+          <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+          <ScalarProperty Name="DOI_TUONG" ColumnName="DOI_TUONG" />
+          <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
+          <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+          <ScalarProperty Name="NGAY_THUC_HIEN" ColumnName="NGAY_THUC_HIEN" />
+          <ScalarProperty Name="PHAM_VI" ColumnName="PHAM_VI" />
+          <ScalarProperty Name="KHU_VUC_ID" ColumnName="KHU_VUC_ID" />
+          <ScalarProperty Name="HINH_THUC_TRUYEN_THONG" ColumnName="HINH_THUC_TRUYEN_THONG" />
+          <ScalarProperty Name="TEN_CHIEN_DICH" ColumnName="TEN_CHIEN_DICH" />
+          <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

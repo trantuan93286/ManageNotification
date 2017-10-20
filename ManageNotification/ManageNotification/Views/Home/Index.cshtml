@@ -1,0 +1,419 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+        <div class="content-wrapper" ng-controller="IndexController">
+            <section class="content">
+                <div class="row">
+                    <div class="col-md-12 col-xs-12">
+                        <div class="box box-default">
+                            <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-10 col-xs-12">
+                                        <div class="box-filter">
+                                            <div class="row">
+                                                <div class="col-md-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Kỳ dữ liệu</label>
+                                                        <select kendo-drop-down-list
+                                                                k-data-text-field="'Text'"
+                                                                k-data-value-field="'ID'"
+                                                                k-data-source="data.dataKi"
+                                                                ng-model="searchInfo.kiDuLieu"
+                                                                ng-change="DongBoDuLieu()"
+                                                                style="width: 100%"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Huyện</label>
+                                                        <select class="form-control" data-placeholder="Huyện" style="width: 100%;">
+                                                            <option>Chọn tất cả</option>
+                                                            <option>Huyện Đà Bắc</option>
+                                                            <option>Huyện Kỳ Sơn</option>
+                                                            <option>Huyện Lương Sơn</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Xã/Phường</label>
+                                                        <select class="form-control" data-placeholder="Xã/Phường" style="width: 100%;">
+                                                            <option>Chọn tất cả</option>
+                                                            <option>Xã Giáp Đắt</option>
+                                                            <option>Xã Mường Chiềng</option>
+                                                            <option>Xã Tân Pheo</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-xs-12">
+                                                    <label style="color:transparent;">Đồng bộ dữ liệu</label>
+                                                    <a class="btn btn-primary btn-block" ng-click="DongBoDuLieu()">Đồng bộ dữ liệu</a>
+                                                </div>
+                                                @*<div class="col-md-9 col-xs-12 padding-lr-0">
+
+                                            <div class="col-md-2 col-xs-12">
+                                                <div class="form-group">
+                                                    <label>Tháng</label>
+                                                    <select kendo-drop-down-list
+                                                            k-data-text-field="'Text'"
+                                                            k-data-value-field="'ID'"
+                                                            k-data-source="data.dataThang"
+                                                            ng-disabled="searchInfo.kidulieu == 5"
+                                                            style="width: 100%"
+                                                            ng-model="searchInfo.thang"></select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2 col-xs-12">
+                                                    <div class="form-group">
+                                                        <label>Năm</label>
+                                                        <select kendo-drop-down-list
+                                                                k-data-text-field="'Text'"
+                                                                k-data-value-field="'ID'"
+                                                                k-data-source="data.dataNam"
+                                                                ng-model="searchInfo.nam"
+                                                                style="width: 100%"></select>
+                                                    </div>
+                                                </div>
+                                        </div>*@
+                                            </div>
+                                            @*<div class="row">s
+                                        <div class="col-md-3 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Tên Bệnh</label>
+                                                <select class="form-control" data-placeholder="Tình Trạng" style="width: 100%;">
+                                                    <option>Sốt Xuất Huyết</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Tình Trạng</label>
+                                                <select class="form-control" data-placeholder="Tình Trạng" style="width: 100%;">
+                                                    <option>Đã Xác Nhận</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-xs-12">
+                                            <div class="form-group">
+                                                <label>Kết Quả Xét Nghiệm</label>
+                                                <select class="form-control" data-placeholder="Kết Quả Xét Nghiệm" style="width: 100%;">
+                                                    <option>Dương Tính</option>
+                                                    <option>Âm Tính</option>
+
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-xs-12">
+                                        <!-- <a class="btn btn-primary btn-block">Đồng bộ dữ liệu</a> -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-10 col-xs-12 padding-lr-0">
+                                        @*<div class="col-md-3 col-xs-12">
+                                    <div class="form-group">
+                                        <label>Tỉnh/TP</label>
+                                        <select class="form-control" data-placeholder="Tỉnh/TP" style="width: 100%;">
+                                            <option>Chọn tất cả</option>
+                                            <option>Hòa Bình</option>
+                                            <option>Hà Nội</option>
+                                            <option>HCM</option>
+                                            <option>4</option>
+                                        </select>
+                                    </div>
+                                </div>*@
+                                        
+                                    </div>
+                                    @*<div class="col-md-2 col-xs-12">
+                                <label style="color:transparent;">Tiếp Tục</label>
+                                <a href="histories.html" class="btn btn-primary btn-block">Tiếp Tục</a>
+                            </div>*@
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Bảng số liệu</h3>
+                                <div class="box-tools pull-right hidden">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body table-responsive no-padding" style="height: 320px; overflow: scroll;">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>Tên bệnh</th>
+                                        <th>Số mắc</th>
+                                        <th>Số chết</th>
+                                        <th>Trạng thái</th>
+                                    </tr>
+                                    <tr ng-repeat="benh in data.dataBenh " ng-if="benh.so_mac > 0 && data.showtable == true" ng-click="setClickedRow($index, benh);">
+
+                                        <td>{{benh.Text}}</td>
+                                        <td>{{benh.so_mac}}</td>
+                                        <td>{{benh.so_chet}}</td>
+                                        <td>
+                                            <span class="label label-danger" ng-show="benh.status == 1">
+                                                <i class="fa fa-arrow-up" aria-hidden="true"></i> Tăng
+                                            </span>
+                                            <span class="label label-success" ng-show="benh.status == 2">
+                                                <i class="fa fa-arrow-down" aria-hidden="true"></i> Giảm
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr ng-if="data.showtable == false">
+                                        <td>Không có dữ liệu</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Số liệu so sánh</h3>
+                                <div class="box-tools pull-right hidden">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body">
+                                <div class="chart">
+                                    @*<canvas id="barChart" style="height:230px"></canvas>*@
+                                    <div ng-show="searchInfo.kiDuLieu == 1" kendo-chart="accountComparison" k-options="accountComparisonOptions" style="height: 300px"></div>
+                                    <div ng-show="searchInfo.kiDuLieu == 2" kendo-chart="accountComparison1" k-options="accountComparisonOptions1" style="height: 300px"></div>
+                                    <div ng-show="searchInfo.kiDuLieu == 3" kendo-chart="accountComparison2" k-options="accountComparisonOptions2" style="height: 300px"></div>
+                                    <div ng-show="searchInfo.kiDuLieu == 5" kendo-chart="accountComparison3" k-options="accountComparisonOptions3" style="height: 300px"></div>
+                                </div>
+                            </div>
+
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+
+                </div>
+
+                @*Dang*@ 
+                <div class="row">
+                    <div class="col-md-6 col-xs-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Số cuộc gọi theo bệnh</h3>
+                                <div class="box-tools pull-right hidden">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
+                                        <i class="fa fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="box-body table-responsive no-padding" style="height: 320px; overflow: scroll;">
+                                <table class="table table-hover">
+                                    <tr>
+                                        <th>Tên bệnh</th>
+                                        <th>Số cuộc gọi</th>
+                                        <th>Số tin tức</th>
+                                        @*<th>Trạng thái</th>*@
+                                    </tr>
+                                    <tr ng-repeat="benh in data.dataBenh " ng-if="benh.so_mac > 0 && data.showtable == true" ng-click="setClickedRow($index, benh);">
+
+                                        <td>{{benh.Text}}</td>
+                                        <td>{{benh.so_mac}}</td>
+                                        <td>{{benh.so_chet}}</td>
+                                        @*<td>
+                                            <span class="label label-danger" ng-show="cuocgoi.status == 1">
+                                                <i class="fa fa-arrow-up" aria-hidden="true"></i> Tăng
+                                            </span>
+                                            <span class="label label-success" ng-show="cuocgoi.status == 2">
+                                                <i class="fa fa-arrow-down" aria-hidden="true"></i> Giảm
+                                            </span>
+                                        </td>*@
+                                    </tr>
+                                    <tr ng-if="data.showtable == false">
+                                        <td>Không có dữ liệu</td>
+                                    </tr>
+
+                                </table>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                        @*<div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Số liệu cuộc gọi</h3>
+
+                            </div>
+
+                            <div class="box-body">
+                                <div class="chart">
+                                    <canvas id="areaChart" style="height:300px"></canvas>
+                                </div>
+                            </div>
+                        </div>*@
+                    </div>
+                    <div class="col-md-6 col-xs-12">
+                        <div class="box">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">Biểu đồ số liệu cuộc gọi</h3>
+
+
+                            </div>
+                            <div class="box-body chart-responsive">
+                                <div class="chart" id="sales-chart" style="height: 300px; position: relative;"></div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                    
+                </div>
+                @*end Dang*@
+            </section>
+        </div>
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <script>
+        $(function() {
+          
+            // bar chart
+            var areaChartData = {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+                datasets: [{
+                    label: 'Electronics',
+                    fillColor: 'rgba(210, 214, 222, 1)',
+                    strokeColor: 'rgba(210, 214, 222, 1)',
+                    pointColor: 'rgba(210, 214, 222, 1)',
+                    pointStrokeColor: '#c1c7d1',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(220,220,220,1)',
+                    data: [65, 59, 80, 81, 56, 55, 40]
+                }, {
+                    label: 'Digital Goods',
+                    fillColor: 'rgba(60,141,188,0.9)',
+                    strokeColor: 'rgba(60,141,188,0.8)',
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [28, 48, 40, 19, 86, 27, 90]
+                }]
+            }
+
+            //var barChartCanvas = $('#barChart').get(0).getContext('2d')
+            //var barChart = new Chart(barChartCanvas)
+            //var barChartData = areaChartData
+            //barChartData.datasets[1].fillColor = '#00a65a'
+            //barChartData.datasets[1].strokeColor = '#00a65a'
+            //barChartData.datasets[1].pointColor = '#00a65a'
+            //var barChartOptions = {
+            //    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+            //    scaleBeginAtZero: true,
+            //    //Boolean - Whether grid lines are shown across the chart
+            //    scaleShowGridLines: true,
+            //    //String - Colour of the grid lines
+            //    scaleGridLineColor: 'rgba(0,0,0,.05)',
+            //    //Number - Width of the grid lines
+            //    scaleGridLineWidth: 1,
+            //    //Boolean - Whether to show horizontal lines (except X axis)
+            //    scaleShowHorizontalLines: true,
+            //    //Boolean - Whether to show vertical lines (except Y axis)
+            //    scaleShowVerticalLines: true,
+            //    //Boolean - If there is a stroke on each bar
+            //    barShowStroke: true,
+            //    //Number - Pixel width of the bar stroke
+            //    barStrokeWidth: 2,
+            //    //Number - Spacing between each of the X value sets
+            //    barValueSpacing: 5,
+            //    //Number - Spacing between data sets within X values
+            //    barDatasetSpacing: 1,
+            //    //String - A legend template
+            //    legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].fillColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+            //    //Boolean - whether to make the chart responsive
+            //    responsive: true,
+            //    maintainAspectRatio: true
+            //}
+            //barChartOptions.datasetFill = false
+            //barChart.Bar(barChartData, barChartOptions)
+
+            //DONUT CHART
+            var donut = new Morris.Donut({
+                element: 'sales-chart',
+                resize: true,
+                colors: ["#3c8dbc", "#f56954", "#00a65a"],
+                data: [{
+                    label: "Cuộc gọi thành công",
+                    value: 60
+                }, {
+                    label: "Cuộc gọi không thành công",
+                    value: 40
+                }],
+                hideHover: 'auto'
+            });
+            var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+            // This will get the first returned node in the jQuery collection.
+            var areaChart = new Chart(areaChartCanvas)
+
+
+            var areaChartOptions = {
+                //Boolean - If we should show the scale at all
+                showScale: true,
+                //Boolean - Whether grid lines are shown across the chart
+                scaleShowGridLines: false,
+                //String - Colour of the grid lines
+                scaleGridLineColor: 'rgba(0,0,0,.05)',
+                //Number - Width of the grid lines
+                scaleGridLineWidth: 1,
+                //Boolean - Whether to show horizontal lines (except X axis)
+                scaleShowHorizontalLines: true,
+                //Boolean - Whether to show vertical lines (except Y axis)
+                scaleShowVerticalLines: true,
+                //Boolean - Whether the line is curved between points
+                bezierCurve: true,
+                //Number - Tension of the bezier curve between points
+                bezierCurveTension: 0.3,
+                //Boolean - Whether to show a dot for each point
+                pointDot: false,
+                //Number - Radius of each point dot in pixels
+                pointDotRadius: 4,
+                //Number - Pixel width of point dot stroke
+                pointDotStrokeWidth: 1,
+                //Number - amount extra to add to the radius to cater for hit detection outside the drawn point
+                pointHitDetectionRadius: 20,
+                //Boolean - Whether to show a stroke for datasets
+                datasetStroke: true,
+                //Number - Pixel width of dataset stroke
+                datasetStrokeWidth: 2,
+                //Boolean - Whether to fill the dataset with a color
+                datasetFill: true,
+                //String - A legend template
+                legendTemplate: '<ul class="<%=name.toLowerCase()%>-legend"><% for (var i=0; i<datasets.length; i++){%><li><span style="background-color:<%=datasets[i].lineColor%>"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>',
+                //Boolean - whether to maintain the starting aspect ratio or not when responsive, if set to false, will take up entire container
+                maintainAspectRatio: true,
+                //Boolean - whether to make the chart responsive to window resizing
+                responsive: true
+            }
+
+            //Create the line chart
+            areaChart.Line(areaChartData, areaChartOptions)
+        });
+    </script>
+
+
+ 

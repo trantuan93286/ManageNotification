@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NotificationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChienDichTruyenThong">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TEN_CHIEN_DICH" Type="nvarchar" MaxLength="250" />
+    <Property Name="HINH_THUC_TRUYEN_THONG" Type="int" />
+    <Property Name="KHU_VUC_ID" Type="int" />
+    <Property Name="PHAM_VI" Type="int" />
+    <Property Name="NGAY_THUC_HIEN" Type="datetime" />
+    <Property Name="SO_LUONG" Type="int" />
+    <Property Name="NOI_DUNG" Type="ntext" />
+    <Property Name="DOI_TUONG" Type="int" />
+    <Property Name="TRANG_THAI" Type="int" />
+    <Property Name="SO_LUONG_THANH_CONG" Type="int" />
+    <Property Name="TINH_ID" Type="int" />
+    <Property Name="HUYEN_ID" Type="int" />
+    <Property Name="XA_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="Huyen">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HUYEN_ID" Type="float" />
+    <Property Name="TENHUYEN" Type="nvarchar" MaxLength="255" />
+    <Property Name="TINH_ID" Type="float" />
+  </EntityType>
+  <EntityType Name="Tinh">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TINH_ID" Type="int" Nullable="false" />
+    <Property Name="TENTINH" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VUNGMIEN_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Xa">
+    <Key>
+      <PropertyRef Name="AutoID" />
+    </Key>
+    <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="XA_ID" Type="float" />
+    <Property Name="TENXA" Type="nvarchar" MaxLength="255" />
+    <Property Name="HUYEN_ID" Type="float" />
+  </EntityType>
+  <EntityContainer Name="NotificationModelStoreContainer">
+    <EntitySet Name="ChienDichTruyenThong" EntityType="Self.ChienDichTruyenThong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Huyen" EntityType="Self.Huyen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tinh" EntityType="Self.Tinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Xa" EntityType="Self.Xa" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

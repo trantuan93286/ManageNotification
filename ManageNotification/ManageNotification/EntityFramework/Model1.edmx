@@ -1,0 +1,195 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="NotificationModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChienDichTruyenThong">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TEN_CHIEN_DICH" Type="nvarchar" MaxLength="250" />
+          <Property Name="HINH_THUC_TRUYEN_THONG" Type="int" />
+          <Property Name="KHU_VUC_ID" Type="int" />
+          <Property Name="PHAM_VI" Type="int" />
+          <Property Name="NGAY_THUC_HIEN" Type="datetime" />
+          <Property Name="SO_LUONG" Type="int" />
+          <Property Name="NOI_DUNG" Type="ntext" />
+          <Property Name="DOI_TUONG" Type="int" />
+          <Property Name="TRANG_THAI" Type="int" />
+          <Property Name="SO_LUONG_THANH_CONG" Type="int" />
+          <Property Name="TINH_ID" Type="int" />
+          <Property Name="HUYEN_ID" Type="int" />
+          <Property Name="XA_ID" Type="int" />
+        </EntityType>
+        <EntityType Name="Huyen">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HUYEN_ID" Type="float" />
+          <Property Name="TENHUYEN" Type="nvarchar" MaxLength="255" />
+          <Property Name="TINH_ID" Type="float" />
+        </EntityType>
+        <EntityType Name="Tinh">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TINH_ID" Type="int" Nullable="false" />
+          <Property Name="TENTINH" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="VUNGMIEN_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Xa">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="numeric" Precision="18" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="XA_ID" Type="float" />
+          <Property Name="TENXA" Type="nvarchar" MaxLength="255" />
+          <Property Name="HUYEN_ID" Type="float" />
+        </EntityType>
+        <EntityContainer Name="NotificationModelStoreContainer">
+          <EntitySet Name="ChienDichTruyenThong" EntityType="Self.ChienDichTruyenThong" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Huyen" EntityType="Self.Huyen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tinh" EntityType="Self.Tinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Xa" EntityType="Self.Xa" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NotificationModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="NotificationEntities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="Huyens" EntityType="NotificationModel.Huyen" />
+          <EntitySet Name="Tinhs" EntityType="NotificationModel.Tinh" />
+          <EntitySet Name="Xas" EntityType="NotificationModel.Xa" />
+          <EntitySet Name="ChienDichTruyenThongs" EntityType="NotificationModel.ChienDichTruyenThong" />
+        </EntityContainer>
+        <EntityType Name="Huyen">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HUYEN_ID" Type="Double" />
+          <Property Name="TENHUYEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TINH_ID" Type="Double" />
+        </EntityType>
+        <EntityType Name="Tinh">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TINH_ID" Type="Int32" Nullable="false" />
+          <Property Name="TENTINH" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="VUNGMIEN_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Xa">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="XA_ID" Type="Double" />
+          <Property Name="TENXA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="HUYEN_ID" Type="Double" />
+        </EntityType>
+        <EntityType Name="ChienDichTruyenThong">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Decimal" Nullable="false" Precision="18" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TEN_CHIEN_DICH" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="HINH_THUC_TRUYEN_THONG" Type="Int32" />
+          <Property Name="KHU_VUC_ID" Type="Int32" />
+          <Property Name="PHAM_VI" Type="Int32" />
+          <Property Name="NGAY_THUC_HIEN" Type="DateTime" Precision="3" />
+          <Property Name="SO_LUONG" Type="Int32" />
+          <Property Name="NOI_DUNG" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DOI_TUONG" Type="Int32" />
+          <Property Name="TRANG_THAI" Type="Int32" />
+          <Property Name="SO_LUONG_THANH_CONG" Type="Int32" />
+          <Property Name="TINH_ID" Type="Int32" />
+          <Property Name="HUYEN_ID" Type="Int32" />
+          <Property Name="XA_ID" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NotificationModelStoreContainer" CdmEntityContainer="NotificationEntities" >
+          <EntitySetMapping Name="Huyens">
+            <EntityTypeMapping TypeName="NotificationModel.Huyen">
+              <MappingFragment StoreEntitySet="Huyen">
+                <ScalarProperty Name="TINH_ID" ColumnName="TINH_ID" />
+                <ScalarProperty Name="TENHUYEN" ColumnName="TENHUYEN" />
+                <ScalarProperty Name="HUYEN_ID" ColumnName="HUYEN_ID" />
+                <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tinhs">
+            <EntityTypeMapping TypeName="NotificationModel.Tinh">
+              <MappingFragment StoreEntitySet="Tinh">
+                <ScalarProperty Name="VUNGMIEN_ID" ColumnName="VUNGMIEN_ID" />
+                <ScalarProperty Name="TENTINH" ColumnName="TENTINH" />
+                <ScalarProperty Name="TINH_ID" ColumnName="TINH_ID" />
+                <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Xas">
+            <EntityTypeMapping TypeName="NotificationModel.Xa">
+              <MappingFragment StoreEntitySet="Xa">
+                <ScalarProperty Name="HUYEN_ID" ColumnName="HUYEN_ID" />
+                <ScalarProperty Name="TENXA" ColumnName="TENXA" />
+                <ScalarProperty Name="XA_ID" ColumnName="XA_ID" />
+                <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ChienDichTruyenThongs">
+            <EntityTypeMapping TypeName="NotificationModel.ChienDichTruyenThong">
+              <MappingFragment StoreEntitySet="ChienDichTruyenThong">
+                <ScalarProperty Name="XA_ID" ColumnName="XA_ID" />
+                <ScalarProperty Name="HUYEN_ID" ColumnName="HUYEN_ID" />
+                <ScalarProperty Name="TINH_ID" ColumnName="TINH_ID" />
+                <ScalarProperty Name="SO_LUONG_THANH_CONG" ColumnName="SO_LUONG_THANH_CONG" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="DOI_TUONG" ColumnName="DOI_TUONG" />
+                <ScalarProperty Name="NOI_DUNG" ColumnName="NOI_DUNG" />
+                <ScalarProperty Name="SO_LUONG" ColumnName="SO_LUONG" />
+                <ScalarProperty Name="NGAY_THUC_HIEN" ColumnName="NGAY_THUC_HIEN" />
+                <ScalarProperty Name="PHAM_VI" ColumnName="PHAM_VI" />
+                <ScalarProperty Name="KHU_VUC_ID" ColumnName="KHU_VUC_ID" />
+                <ScalarProperty Name="HINH_THUC_TRUYEN_THONG" ColumnName="HINH_THUC_TRUYEN_THONG" />
+                <ScalarProperty Name="TEN_CHIEN_DICH" ColumnName="TEN_CHIEN_DICH" />
+                <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
